@@ -1,0 +1,294 @@
+
+/****************************************************************************************************/
+/* HTML AND CSS VERSION BY L.JONAS DEV ------------------------------------------------------------*/
+/**************************************************************************************************/
+
+
+/*******************************/
+   /* (start) BODY APPLIES  */
+/*******************************/
+
+/* Body, applies to the whole site */
+body {
+	background-color:#fff;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#fff; 
+}
+
+html, body {
+height: 100%;
+}
+
+/* Reset margin & padding */
+* {
+	margin:0px;
+	padding:0px;	
+}
+
+/* Link styles */
+a {
+	color:#000000;
+	text-decoration:none;
+}
+
+
+/* Removes the link-border from images in some browsers */
+
+a img {
+	border:none;
+}
+
+/* Wrapper, keeps the site in place */
+#wrapper {
+	width:900px;
+	position:relative;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}
+
+#global-divider {
+	width:100%;
+	height:120px;
+	
+}
+
+/*******************************/
+   /* (end) BODY APPLIES  */
+/*******************************/
+
+
+/* MAIN DESIGN BODY/DESIGN APPLIES (S) ------------------------------------------------------------*/
+
+#main-box {
+	width:900px;
+	height:auto;
+    border: 1px solid #737373;
+	float:left;	
+}
+
+#main-box .top-bar{
+	width:900px;
+	height:100px;
+	background-image:url(../images/top-bar.jpg);
+	
+}
+
+#main-box .content-area{
+	width:896px;
+	height:auto;
+	float:left;
+	background-color:#d8d8d8;
+	margin-left:1px;
+    border-left: 1px solid #054571;
+	border-bottom: 1px solid #054571;
+    border-right: 1px solid #054571;
+    outline: 1px solid #0977c1;
+	
+}
+
+#divider{
+	width:100%;
+	height:80px;
+}
+
+#divider-R{
+	width:100%;
+	height:80px;
+	float:left;
+}
+
+/* MAIN DESIGN BODY/DESIGN APPLIES (E) ------------------------------------------------------------*/
+
+
+/* LOGIN BOX (S) ------------------------------------------------------------*/
+
+#login-box {
+	width:472px;
+	height:300px;
+	-moz-border-radius: 14px;
+    border-radius: 14px;
+	background-color:#c7c7c7;
+	border: 1px solid #8a8a8a;
+	margin-left:200px;
+		
+}
+
+#login-box .padder {
+	width:100%;
+	height:15px;
+}
+
+#login-box .padder-log {
+	width:100%;
+	height:35px;
+}
+
+
+#login-box .info {
+	width:100%;
+	height:27px;
+}
+
+#login-box .info p{
+	color:#4b4b4b;
+	font-family:"Myriad Pro";
+	font-size:24px;
+	margin-left:30px;
+	text-shadow: 1px 1px 0px #fff;
+
+}
+
+#login-box .content{
+	width:245px;
+	height:auto;
+	margin-left:110px;
+}
+
+#login-box .txt {
+	color:#5b5b5b;
+	font-family:"Myriad Pro";
+	font-size:14px;
+	margin-left:10px;
+	text-shadow: 1px 1px 0px #fff;
+	text-transform:uppercase;
+
+	
+}
+
+#input-u {
+	border:2px solid #a9a9a9;
+	background-color:#fff;
+	margin-bottom:5px;
+	width:240px;
+	height:33px;
+	-moz-border-radius: 5px;
+    border-radius: 5px;
+	font-size:11px;
+	margin-bottom:10px;
+	
+}
+
+#input-p {
+	border:2px solid #a9a9a9;
+	background-color:#fff;
+	margin-bottom:5px;
+	width:240px;
+	height:33px;
+	-moz-border-radius: 5px;
+    border-radius: 5px;
+	font-size:11px;
+	margin-bottom:10px;
+	
+}
+
+#btn {
+	border:none;
+	background-color:transparent;
+	margin-bottom:5px;
+	width:117px;
+	height:44px;
+	float:right;
+	background-image:url(../images/login-btn.png);
+	cursor:pointer;
+	
+}
+
+/* LOGIN BOX (E) ------------------------------------------------------------*/
+
+
+/* LOGGED IN MENU (S) ------------------------------------------------------------*/
+
+#left-menu {
+	width:247px;
+	height:auto;
+	margin-left:15px;
+	margin-top:35px;
+	float:left;
+}
+
+
+#left-menu li {
+	width:239px;
+	height:38px;
+	display:block;
+	background-image:url(../images/button-inactive.jpg);
+	margin-bottom:10px;
+
+}
+
+#left-menu li.active {
+	width:239px;
+	height:38px;
+	display:block;
+	background-image:url(../images/button-active.jpg);
+	margin-bottom:10px;
+
+}
+
+#left-menu li a {
+	color:#6c6c6c;
+	font-family:"Myriad Pro";
+	font-size:12px;
+	position:relative;
+	top:11px;
+	margin-left:20px;
+	text-transform:uppercase;
+	text-shadow: 1px 1px 0px #edecec;	
+	
+}
+
+#left-menu li.active a {
+	color:#fff;
+	font-size:12px;
+	position:relative;
+	top:11px;
+	margin-left:20px;
+	text-transform:uppercase;
+	text-shadow: 1px 1px 0px #000;
+	font-family:"Myriad Pro";	
+	
+}
+
+/* LOGGED IN MENU (E) ------------------------------------------------------------*/
+
+/* LOGGED IN USER PANEL (S) ------------------------------------------------------------*/
+
+#user-panel {
+	width:570px;
+	height:509px;
+	-moz-border-radius: 14px;
+    border-radius: 14px;
+	float:left;
+	background-color:#c7c7c7;
+	border: 1px solid #8a8a8a;
+	margin-left:25px;
+
+		
+}
+
+#user-panel .padder {
+	width:100%;
+	height:15px;
+}
+
+#user-panel .name {
+	width:550px;
+	height:auto;
+}
+#user-panel .name {
+	color:#4b4b4b;
+	font-family:"Myriad Pro";
+	font-size:21px;
+	padding-left:20px;
+	text-shadow: 1px 1px 0px #e7e7e7;
+}
+
+
+
+
+/* LOGGED IN USER PANEL (E) ------------------------------------------------------------*/
+
+
