@@ -6,8 +6,8 @@ public function Top()
 {}
 public function Content()
 {
-	
-	var_dump($_GET);
+	global $smarty;
+	$smarty->display('logged_in.tpl');
 		
 }
 public function Bottom()

@@ -13,21 +13,22 @@ class Controller {
 	
 	public function Content()
 	{
-		global $smarty;
+		global $smarty,$user;
 		
-		$form = new Ajax_Form('first', 'first_form', 'post', ''.$this->main->page.'');
-		$array['first'] = "First Choice";
-		$array['second'] = "Second Choice";
+		if($user->logged_in){ $smarty->display('logged_in.tpl'); }
 		
-		$params['style'] = "background-color:silver;";
-		$params['align'] = "center";
-		
-		$form->add_field('username', 'user', 'text');
-		$form->add_field('password', 'pass', 'password');
-		$form->add_field('email', 'email', 'select', $array, $params);
-		
-		$smarty->assign('form', $form);
-		$smarty->display('index.tpl');
+		else{
+			$form = new Ajax_Form('first', 'first_form', 'post', '?action=forms', 'btn');
+			
+			$form->add_field('username', 'input_u', 'text');
+			$form->add_field('password', 'input_p', 'password');
+			
+			$form->add_field('func', 'func', 'hidden', null, array('value'=>'login'));
+			
+			$smarty->assign('form', $form);
+			
+			$smarty->display('log_in.tpl');
+		}
 	}
 	
 	public function Bottom()

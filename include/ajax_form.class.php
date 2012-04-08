@@ -36,11 +36,15 @@ class Ajax_Form {
 	public function open_form()
 	{
 		
-		echo "<script>\n";
+		echo "<script>\n
+		
+		";
 		
 		echo "
 				$(document).ready(function() {
-					$('#$this->submit_id').click(function() {";
+					$('#$this->submit_id').click(function() {
+						  $.blockUI({ message: '<img src=\"images/loading.gif\" />' });\n 
+						";
 					
 				if( is_array($this->fields) )
 						{
@@ -56,13 +60,17 @@ class Ajax_Form {
 						}
 						
 					echo "
-					data = data.slice(0, (data.length - 1));
+					
 					
 					$.ajax({
 						  data: data,
+						  dataType: 'json',
 						  url: '$this->url',
 						  success: function(data) {
-							$('#result').html(data);
+							//$('#result').html(data);
+							
+							if(data.success == false){ $('#errors').html(data.errors); }
+							else{ form_success(); }
 						  }
 						});
 						
@@ -97,7 +105,7 @@ class Ajax_Form {
 		
 		$type = strtolower( $type );
 		
-		if( $type != 'text' && $type != 'password' && $type != 'select' ) { 
+		if( $type != 'text' && $type != 'password' && $type != 'select' && $type != 'hidden' ) { 
 		
 			$this->error('`'.$type.'` is an invalid type for field `'.$name.'`.'); 
 		}
@@ -116,6 +124,9 @@ class Ajax_Form {
 			case "select":
 				$this->add_select_field($name,$id,$data);
 				break;
+				
+			case "hidden":
+				$this->add_hidden_field($name,$id);
 		}
 		
 	}
@@ -130,7 +141,7 @@ class Ajax_Form {
 	}
 	public function submit_button( $value='Submit' )
 	{
-		return "<button id='$this->submit_id' $this->params >$value</button>";
+		return "<div id='$this->submit_id' $this->params >$value</div>";
 	}
 	private function add_text_field($name, $id)
 	{
@@ -165,6 +176,13 @@ class Ajax_Form {
 		$this->params = null;
 			
 		}
+	}
+	private function add_hidden_field($name,$id)
+	{
+		$input = "<input type='hidden' name='$name' id='$id' $this->params />";
+		
+		$this->fields[$id] = $input;
+		$this->params = null;	
 	}
 }
 /*
