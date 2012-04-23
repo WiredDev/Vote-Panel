@@ -58,7 +58,7 @@ class Database{
 
 #-############################################# 
 # desc: constructor 
-private function __construct($server=null, $user=null, $pass=null, $database=null){ 
+public function __construct($server=null, $user=null, $pass=null, $database=null){ 
     // error catching if not passed in 
     if($server==null || $user==null || $database==null){ 
         $this->oops("Database information must be passed in when the object is first created."); 

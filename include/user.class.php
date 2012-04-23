@@ -10,7 +10,6 @@ class User {
 public function construct( $sid=null )
 {
 	$this->sid = $sid;
-	$this->logged_in = 'TEST';
 	
 	if( $this->sid==null ){ $this->error('Invalid Sesssion ID ($sid)'); }
 	//else { return $this->user_obj( $sid ); }

@@ -21,7 +21,13 @@ class Main {
 	
 	public function display_page( $page=null )
 	{
-		global $smarty;
+		global $smarty,$user;
+		
+		
+		//if(time() - $_SESSION['last_active'] > 5){ $_SESSION['last_active'] = time(); header("Location:index.php?action=test"); }
+		
+		$_SESSION['last_active'] = time();
+		
 		if($page != "forms")
 		{
 				if($page==null){$page = "home";}

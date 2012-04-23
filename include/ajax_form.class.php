@@ -70,7 +70,8 @@ class Ajax_Form {
 							//$('#result').html(data);
 							
 							if(data.success == false){ $('#errors').html(data.errors); }
-							else{ form_success(); }
+							else{  form_success(); }
+							data=null;
 						  }
 						});
 						

@@ -2,6 +2,7 @@
 #SERVER SETTINGS
 define("TITLE", "Ultimate Vote Shop v1");
 define("SERVER_TYPE", "trinity"); //either `trinity`, `arcemu`, or `mangos`
+define("TEMPLATE", "default\\");
 
 # WEBSITE DATABASE
 define("WEBSITE_HOST", "localhost");

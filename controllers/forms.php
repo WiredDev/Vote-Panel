@@ -31,7 +31,11 @@ class Forms {
 			
 			$data = array_map(array($main, 'escape'), $data);
 			
-			if(!$server->user_exists($data['input_u'])){ $errors['login_fail'] = 'Username does not exist!'; $errors['login_test'] = 'test error'; }
+			$password_hash = $server->encode_password($data['input_u'], $data['input_p']);
+			
+			# Check Login
+			if(!$server->user_exists($data['input_u'])){ $errors['Login Failed'] = 'Username does not exist!'; }
+			elseif(!$server->check_user($data['input_u'], $password_hash)){ $errors['Login Failed'] = 'Invalid login information.'; }
 
 
 			if($errors != ''){$this->errors = $this->error($errors);  }
@@ -39,6 +43,8 @@ class Forms {
 			$return['errors'] = $this->errors;
 			
 			if($return['errors'] == ''){ $return['success'] = true; } else{ $return['success'] = false; }
+			
+			$this->errors = null;
 			
 			echo json_encode($return, JSON_FORCE_OBJECT);
 			

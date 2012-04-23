@@ -28,27 +28,12 @@
       
     }); 
 </script>
-
-<div id="page">
-
-<div id="wrapper"> <!-- WRAPPER (S) -->
-
-
-<div id="global-divider">
-<!-- MAKING A VALID SPACE SUPPORTED IN THE BROWSERS (S-E) -->
-</div>
-
-
-<!-- MAIN BOX CONTENT (S) -->
-
-<div id="main-box">
-
-<!-- TOP BAR TAG (S) -->
-
-<div class="top-bar">
-<!-- this tag has the image in the css file> .top-bar class -->
-</div>
-
-<!-- TOP BAR TAG (E) -->
-
-<div class="content-area"> <!-- CONTENT AREA IMPORTANT (S) -->
+<div id="conatiner">
+<div id="top"></div>
+<div id="wrap_left">
+<b>Member Login</b><br />
+{$form->open_form()}
+{$form->display_field('func')}
+		<span class="txt">username</span>{$form->display_field('input_u')}<br />
+		<span class="txt">password</span>{$form->display_field('input_p')}<br />
+		{$form->submit_button('')}
